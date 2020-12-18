@@ -20,5 +20,8 @@
   "homepage": "https://github.com/ralph626/Project-2#readme",
   "dependencies": {
     "eslint": "^7.15.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^7.0.0"
   }
 }
