@@ -11,6 +11,7 @@
     "extends": "prettier",
     "plugins": ["prettier"],
     "rules": {
-        "no-var": "error"
+        "no-var": "error",
+        "semi": "error"
     }
 }
