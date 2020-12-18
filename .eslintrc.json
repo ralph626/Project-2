@@ -12,6 +12,7 @@
     "plugins": ["prettier"],
     "rules": {
         "no-var": "error",
-        "semi": "error"
+        "semi": "error",
+        "quotes": ["error", "double"]
     }
 }
