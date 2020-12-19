@@ -12,8 +12,6 @@ $("#compRent").on("click", function rental() {
     console.log(rentURL + rentAddress + "&"+rentBed+ "&"+rentBath+ "&"+rentPropType+ "&"+rentSqFt+ "&"+compProp+ "")
 })
 
-
-
 const settings = {
 	"async": true,
 	"crossDomain": true,
