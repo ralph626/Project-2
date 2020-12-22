@@ -10,13 +10,14 @@ class User extends Model {
 
 User.init(
   {
+    //change id names
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    address: {
       type: DataTypes.STRING,
       allowNull: false,
     },
