@@ -1,0 +1,82 @@
+
+        <!-- This is the form that holds the search field, button, and msg display -->
+        <form>
+            <!-- SEARCH FIELD FOR THE ADDRESS -->
+            <input type="text" placeholder="Search Address" id="address" value="2599 Walnut Ave">
+            <!-- SEARCH FIELD FOR THE PROPERTY TYPE -->
+            <input type="text" placeholder="Property Type" id="rentalProp" value="Apartment">
+            <!-- RENTAL BEDROOM -->
+            <input type="text" placeholder="Number Of Bedrooms" id="bedroom" value="2">
+            <!-- RENTAL BATHROOM -->
+            <input type="text" placeholder="Number Of Bathrooms" id="rentBath" value="2">
+            <!-- RENTAL SQ FT -->
+            <input type="text" placeholder="Square Footage" id="rentSqFt" value="1000">
+            <!-- NUMBER OF COMPARISONS -->
+            <input type="text" placeholder="Number of Comparisons" id="compProp" value="5">
+            <!-- BUTTON -->
+            <button type="submit" id="compRent" style="background-color: aqua; 
+            width: 7.5e; 
+            border-radius: 1.5625em;
+            text-align: center;
+            font-family: fantasy;">COMPARE THIS RENT</button>
+            <!--  -->
+            <span class="msg"></span>
+        </form>
+    
+    <!-- INFORMATION FIELDS THAT NEED TO BE DISPLAYED FROM THE RENT API CALL
+    1.{"rent":2248,
+    2."rentRangeLow":1838.48,
+    3."rentRangeHigh":2657.52,
+    4.(OPTIONAL)"longitude":-118.1729503,
+    5.(OPTIONAL)"latitude":33.8035504,
+    6a."listings":[{"id":"1030-E-Hill-St,-Long-Beach,-CA-90806",
+    "formattedAddress":"1030 E Hill St, Long Beach, CA 90806",
+    "longitude":-118.179747,
+    "latitude":33.796859,
+    "city":"Long Beach",
+    "state":"CA",
+    "zipcode":"90806",
+    "price":1695,
+    "publishedDate":"2020-12-16T03:42:03.370Z",
+    "distance":0.9747491799555926,
+    "daysOld":4.97,
+    "correlation":0.9142,
+    "address":"1030 E Hill St",
+    "county":"Los Angeles County",
+    "bedrooms":2,
+    "bathrooms":2,
+    "propertyType":"Apartment",
+    "squareFootage":717},
+    =================================================================
+    ===========================================================================
+    -->
+
+    <section id="apartmentListings">
+        <!-- DIV FOR CURRENT ADDRESS RENT & RENT RANGE -->
+        <div id="rents">
+            <h1 id="searchedListing"></h1>
+            <p id="searchedRent"></p>
+            <p id="rentRangeLow"></p>
+            <p id="rentRangeHigh"></p>            
+        </div>
+        <!-- DIV FOR FIRST APARTMENT LISTING -->
+        <div>
+
+            <h1 id="formattedAddressList"></h1>
+            <p id="cityList"></p>
+            <p id="listPrice"></p>
+            <p id="listBed"></p>
+            <p id="listBath"></p>
+            <img id="propPhoto" src="###" alt="Property Photo">
+            <p id="propType"></p>
+            <p id="listSqFt"></p>
+        </div>
+    </section>"
+    
+    <!-- SCRIPT SOURCE FOR RENT API -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="rent.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{{!-- '###' USED AS PLACEHOLDER FOR FUTURE LINKS AND FILES --}}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go Home!</title>
+  <link rel="stylesheet" href="##">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+ 
+        <nav>
+  
+        {{#if loggedIn}}
+
+
+        <a href="###">Home</a>
+        <a href="###">Saved Listings</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+
+ 
+        <a href="###">Home</a>
+        <a href="###">Dashboard</a>
+        <a href="###">Login</a>
+        {{/if}}
+      </nav>
+
+      <h1>
+        <a href="###">Go Home!:Find a deal for a steal!</a>
+      </h1>
+
+
+
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+  
+  {{#if loggedIn}}
+  <script src="###"></script>
+  {{/if}}
+</body>
+
+</html>
