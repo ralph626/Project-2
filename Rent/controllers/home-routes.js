@@ -1,7 +1,4 @@
 const router = require('express').Router();
-const { request } = require('express');
-const express = require('express')
-const sequelize = require('../config/connection');
 const axios = require('axios')
 
 var apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
@@ -41,20 +38,36 @@ var rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice"
 
 //================GET REQUEST TO USE THE API==============//
 
-router.get( '/rentSearch', function(req, res){
+router.post( '/rentSearch', function(req, res){
+
 // step 1 : Build Axios 'GET' to 'realty-mole' based on data passed in as part of request
-    axios({
-        method: 'get',
-        url: 'https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice',
+    //post request body obj - 
+    // address: '5500 Grand Lake Drive, San Antonio, TX',
+    // bedrooms: '4',
+    // bathrooms: '2',
+    // propertyType: 'Single Family',
+    // squareFootage: '1600',
+    // compCount: '5'
+var options = {
+  method: 'GET',
+  url: 'https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice',
+  params: req.body,
+  headers: {
+    'x-rapidapi-key': 'b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2',
+    'x-rapidapi-host': 'realtymole-rental-estimate-v1.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+  res.json(response.data)
+}).catch(function (error) {
+	console.error(error);
+});
         
-    })
 // step 2 : Executting the axios post and getting data back
 
 // step 3 : write what we will re-direct the user to with the correct data
-
-
- 
-
 
 })
 
