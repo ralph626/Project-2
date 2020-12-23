@@ -1,4 +1,4 @@
-#loginContainer {
+.inputContainer {
     padding-left: 400px;
     padding-right: 400px;
     padding-top: 50px;
@@ -18,12 +18,6 @@
     font-size: 40px;
 }
 
-#SignUpContainer {
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-top: 50px;
-}
-
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
@@ -32,4 +26,10 @@
 .signupbtn {
     padding: 14px 20px;
     background-color:green;
+}
+
+#ContactForm {
+    padding-top: 50px;
+    padding-right: 400px;
+    padding-left: 400px;
 }
