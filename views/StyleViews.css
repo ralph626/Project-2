@@ -4,6 +4,16 @@
     padding-top: 50px;
 }
 
-.GoHome {
-    font-size: 50px;
+#startButtons {
+    padding-left: 1000px;
+    padding-top: 50px;
+    padding-right:50px;
+    padding-bottom: 50px;
+}
+
+#Motto {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
 }
