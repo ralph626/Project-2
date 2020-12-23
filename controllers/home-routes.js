@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const axios = require('axios')
+const axios = require('axios');
 
-var apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
-var rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice";
+const apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
+const rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice";
 
 
 // $(document).ready(function(){
@@ -48,7 +48,7 @@ router.post( '/rentSearch', function(req, res){
     // propertyType: 'Single Family',
     // squareFootage: '1600',
     // compCount: '5'
-var options = {
+const options = {
   method: 'GET',
   url: 'https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice',
   params: req.body,
@@ -60,7 +60,7 @@ var options = {
 
 axios.request(options).then(function (response) {
   console.log(response.data);
-  res.json(response.data)
+  res.json(response.data);
 }).catch(function (error) {
 	console.error(error);
 });
@@ -69,7 +69,7 @@ axios.request(options).then(function (response) {
 
 // step 3 : write what we will re-direct the user to with the correct data
 
-})
+});
 
 
 
