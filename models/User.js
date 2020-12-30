@@ -17,10 +17,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    address: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // address: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
