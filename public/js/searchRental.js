@@ -10,6 +10,7 @@ $("#firstSearch").on("click", function(event) {
     // address: '5500 Grand Lake Drive, San Antonio, TX',
     // bedrooms: '4',
     // propertyType: 'Single Family'
+    //}
     let searchCriteria = {
         address: $("#address").val(),
         beds: $("#beds").val(),
@@ -29,5 +30,3 @@ $("#firstSearch").on("click", function(event) {
 
 });
 
-// FORMAT FROM GET REQUEST
-// https://realty-mole-property-api.p.rapidapi.com/rentalPrice?compCount:=5&  squareFootage:=16&bathroom=2&bedroom=2&address=5500 Grand Lake Drive, San Antonio, TX&propertyType=single family//
