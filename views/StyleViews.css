@@ -1,0 +1,35 @@
+.inputContainer {
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 50px;
+}
+
+#startButtons {
+    padding-left: 1000px;
+    padding-top: 50px;
+    padding-right:50px;
+    padding-bottom: 50px;
+}
+
+#Motto {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+.signupbtn {
+    padding: 14px 20px;
+    background-color:green;
+}
+
+#ContactForm {
+    padding-top: 50px;
+    padding-right: 400px;
+    padding-left: 400px;
+}
