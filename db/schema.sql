@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS goHome_db;
+CREATE DATABASE goHome_db;
