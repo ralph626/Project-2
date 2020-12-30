@@ -5,40 +5,18 @@ const apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
 const rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice";
 
 
-// $(document).ready(function(){
-// //=============RETRIEVING THE ARRAY OF INFO FROM THE RENT API===========//
-// $("#compRent").on("click", function rental(event) {
-//     event.preventDefault()
-// address = $("#address").val().toLowerCase();
-// propertyType = $("#rentalProp").val().toLowerCase();
-// bedrooms = parseInt($("#bedroom").val());
-// bathrooms = parseInt($("#rentBath").val());
-// squareFootage = parseInt($("#rentSqFt").val());
-// compCount = parseInt($("#compProp").val());
-
-
-//==============NEEDS TO BE MOVED TO A DIFFERENT FILE NOT IN ROUTER===========//
-// const settings = {
-// 	"async": true,
-//     "crossDomain": true,
-    
-//     "url": `https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice?address=${encodeURIComponent(address)}&bedrooms=${encodeURIComponent(bedrooms)}&bathrooms=${encodeURIComponent(bathrooms)}&propertyType=${encodeURIComponent(propertyType)}&squareFootage=${encodeURIComponent(squareFootage)}&compCount=${encodeURIComponent(compCount)}`,
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2",
-// 		"x-rapidapi-host": "realtymole-rental-estimate-v1.p.rapidapi.com"
-// 	}
-// };
-// $.ajax(settings).done(function (response) {
-//     console.log(response);
-// });
-//=======================================================
-// })
-
-
 //================GET REQUEST TO USE THE API==============//
 
+router.get('/', function(req,res){
+  res.render("homepage");
+});
+
+router.get('/rentSearch', function(req,res){
+  res.render("rentsearch");
+});
+
 router.post( '/rentSearch', function(req, res){
+  console.log(req.body);
 
 // step 1 : Build Axios 'GET' to 'realty-mole' based on data passed in as part of request
     //post request body obj - 
