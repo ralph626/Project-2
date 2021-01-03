@@ -1,5 +1,6 @@
 const User = require("./User");
 const Property = require("./Property");
+const Weather = require("./Weather");
 
 // User.hasMany(Project, {
 //   foreignKey: 'user_id',
@@ -10,4 +11,8 @@ const Property = require("./Property");
 //   foreignKey: 'user_id'
 // });
 
-module.exports = { User, Property };
+module.exports = { 
+    User, 
+    Property,
+    Weather,
+     };
