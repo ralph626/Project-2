@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { Router } = require("express");
 const { User } = require("../../models");
 
 router.post("/", async (req, res) => {
@@ -18,7 +19,31 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+//================='POST' ROUTE TO SIGNUP==========//
+router.post("/", async (req,res) =>{
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
+    .then(dbUser => {
+      req.session.save(() =>{
+        req.session.user_id = dbUser.id;
+        req.session.username = dbUser.username;
+        req.session.loggedIn =true;
 
+        res.json(dbUser);
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+
+//========='POST' ROUTE TO VERIFY CURRENT USER==============//
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });

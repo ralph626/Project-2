@@ -1,22 +1,33 @@
 //Update the Weather Model
-module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("weather", {
-    email: {
-      type: DataTypes.STRING,
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Weather extends Model{}
+
+Weather.init(
+  {
+    id:{
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: (email) => {
-        //insert email validation pattern
-        const emailPattern = new RegExp(/.+@.+\.(com|net|edu|gov)/);
-        return emailPattern.test(email);
-      },
+      primaryKey: true,
+      autoIncrement: true
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [6],
-      },
-    },
-  });
-  return User;
-};
+
+    property_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'property',
+        key: 'id'
+      }
+    }
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'weather'
+  }
+
+);
+
+module.exports = Weather;

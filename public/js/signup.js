@@ -1,10 +1,34 @@
 // const { rules } = require("eslint-config-prettier");
+async function newSignUp(event){
+	event.preventDefault();
+
 const key = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
 const url = "mailcheck.p.rapidapi.com";
-let email = document.querySelector("#signup-email").value.trim();
+//=======VARIABLES TO HOLD USER DATA===========//
+const uName = document.querySelector("#user-name").value.trim();
+const email = document.querySelector("#signup-email").value.trim();
+const password = document.querySelector("#password").value.trim();
+
+if (uName && email && password) {
+	const response = await fetch('/signup', {
+		method: 'post',
+		body: JSON.stringify({
+			uName,
+			email,
+			password
+		}),
+		headers: { 'Content-Type': 'application/json'}
+	});
+
+	if (response.ok){
+		document.location.replace('/login');
+	} else {
+		(err);
+	}
+}
 
 
-function newEmailVerification(){
+//=========API CALL TO VERIFY THAT EMAIL IS A GOOD DOMAIN AND NOT SPAM==========//
 fetch("https://mailcheck.p.rapidapi.com/?domain="+ `${email}`, {
 	"method": "GET",
 	"headers": {
@@ -18,4 +42,9 @@ fetch("https://mailcheck.p.rapidapi.com/?domain="+ `${email}`, {
 .catch(err => {
 	console.error(err);
 });
+
 }
+
+document.querySelector("signup-form").addEventListener("submit", newSignUp);
+
+
