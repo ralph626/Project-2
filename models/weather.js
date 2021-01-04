@@ -1,3 +1,4 @@
+//Update the Weather Model
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("weather", {
     email: {
