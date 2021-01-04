@@ -1,37 +1,27 @@
-<h2>Login</h2>
-
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
+<div class="inputContainer">
+  <div>
+    <h1>GoHome Login:</h1>
   </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
-
-<h2>Sign Up</h2>
-
-<form class="form signup-form">
-  <div class="form-group">
-    <label for="name-signup">name:</label>
-    <input class="form-input" type="text" id="name-signup" />
-  </div>
-  <div class="form-group">
-    <label for="email-signup">email:</label>
-    <input class="form-input" type="text" id="email-signup" />
-  </div>
-  <div class="form-group">
-    <label for="password-signup">password:</label>
-    <input class="form-input" type="password" id="password-signup" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">SIGNUP</button>
-  </div>
-</form>
-
-<script src="/js/login.js"></script>
+  <form data-abide novalidate>
+    <label>Email*
+      <input type="text" required pattern="email" />
+      <span class="form-error" data-form-error-on="required">
+        Your email is required.
+      </span>
+      <span class="form-error" data-form-error-on="pattern">
+        Invalid Email
+      </span>
+    </label>
+    <label>Password*
+      <input type="password" required pattern="email" />
+      <span class="form-error" data-form-error-on="required">
+        Your password is required.
+      </span>
+      <span class="form-error" data-form-error-on="pattern">
+        Invalid Password
+      </span>
+    </label>
+    <button class="button" type="submit" value="Submit">Submit</button>
+  </form>
+  <a href="./ForgetPW.html">Forget Password?</a>
+</div>
