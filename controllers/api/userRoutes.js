@@ -1,23 +1,17 @@
-const router = require("express").Router();
+const router = require("express").router();
 const { Router } = require("express");
-const { User } = require("../../models");
+const { User,  } = require("../../models");
 
-router.post("/", async (req, res) => {
-  try {
-    console.log(req.body);
-
-    const userData = await User.create(req.body);
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
+//===========GET ALL USERS================
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
 });
 //================='POST' ROUTE TO SIGNUP==========//
 router.post("/", async (req,res) =>{
