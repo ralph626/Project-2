@@ -12,7 +12,19 @@ Weather.init(
       primaryKey: true,
       autoIncrement: true
     },
+    temperature: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
 
+    },
+    humidity: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    windSpeed: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
+    },
     property_id: {
       type: DataTypes.INTEGER,
       references: {
