@@ -3,7 +3,7 @@ const weatherURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
 const cityName = $("#cityName").val();
 
 // RETRIEVING THE ARRAY OF INFORMATION FROM THE WEATHER API
-$("#weatherBtn").on("click", function weather() {
+$("#homeSearch").on("click", function weather() {
   cityName = $("#cityName").val().toLowerCase();
   console.log(weatherURL + cityName + "&units=imperial" + "&appid=" + apiKey);
   $.ajax({
@@ -21,26 +21,6 @@ $("#weatherBtn").on("click", function weather() {
       dayThreeWeatherData(result);
       dayFourWeatherData(result);
       dayFiveWeatherData(result);
-
-      //   RETRIEVING THE LAST SEARCHED CITIES, IF NULL, ASSIGN A BLANK ARRAY
-      let historyList = JSON.parse(localStorage.getItem("cityList")) || [];
-      console.log(historyList);
-      if (historyList.indexOf(cityName) === -1) {
-        //   APPENDING THE NEW SEARCHED CITY TO THE EXISTING LIST
-        historyList.push(cityName);
-        // SETTING LOCAL STORAGE ITEM WITH A COMBINED LIST
-        localStorage.setItem("cityList", JSON.stringify(historyList));
-      }
-    //   ADDING VALUES TO THE HISTORY LIST
-    let li =$("<li>").text(cityName.toUpperCase());
-    $("#searched-cities").append(li);
-    li.attr('id','#weatherBtn');
-    },
-    error: function (result) {
-      console.log("Failed Request");
-    },
-  });
-});
 
 //FUNCTION TO APPEND THE CURRENT DAYS WEATHER DATA
 function currentWeatherData(response){
@@ -132,3 +112,7 @@ function dayFiveWeatherData(response){
   $("#tempFive").html(tempFive+" Degrees Fahrenheit");
   $("#humidFive").html(humidFive+"%");
 }
+    }
+});
+});
+
