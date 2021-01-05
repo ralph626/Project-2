@@ -6,28 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
   <link rel="stylesheet" href="/css/jass.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/StyleViews.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
-  </header>
+  <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+    <div class="title-bar-title">GoHome</div>
+  </div>
+
+  <div class="top-bar" id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a href="#0">Get Started</a></li>
+        <li><a href="#0">Rent Inquiries</a></li>
+        <li><a href="#0">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
+        {{#if logged_in}}
+        <li>
+          <button class="btn" id="logout">logout</button>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->
