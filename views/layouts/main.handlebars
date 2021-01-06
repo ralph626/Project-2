@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
@@ -10,12 +11,54 @@
   <!-- Foundation Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registry</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/StyleViews.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+>>>>>>> origin
 </head>
 
 <body>
   <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+<<<<<<< HEAD
   <div class="title-bar-title GoHome">GoHome</div>
   </div>
+=======
+    <div class="title-bar-title">GoHome</div>
+  </div>
+
+  <div class="top-bar" id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a href="#0">Get Started</a></li>
+        <li><a href="#0">Rent Inquiries</a></li>
+        <li><a href="#0">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
+        {{#if logged_in}}
+        <li>
+          <button class="btn" id="logout">logout</button>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
+>>>>>>> origin
 
   <div class="top-bar" id="responsive-menu">
       <div class="top-bar-left">

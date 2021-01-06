@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="StyleViews.css" />
+    <!-- Foundation Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="inputContainer">
+      <div>
+        <h1>GoHome Login:</h1>
+      </div>
+      <form data-abide novalidate>
+        <label
+          >Email*
+          <input type="text" required pattern="email" />
+          <span class="form-error" data-form-error-on="required">
+            Your email is required.
+          </span>
+          <span class="form-error" data-form-error-on="pattern">
+            Invalid Email
+          </span>
+        </label>
+        <label
+          >Password*
+          <input type="password" required pattern="email" />
+          <span class="form-error" data-form-error-on="required">
+            Your password is required.
+          </span>
+          <span class="form-error" data-form-error-on="pattern">
+            Invalid Password
+          </span>
+        </label>
+        <button class="button" type="submit" value="Submit">Submit</button>
+      </form>
+      <a href="./ForgetPW.html">Forget Password?</a>
+    </div>
+
+    <!-- Foundation Compressed JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
