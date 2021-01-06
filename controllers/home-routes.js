@@ -42,7 +42,7 @@ router.get("/signup", (req, res) => {
 router.post("/rentSearch", function (req, res) {
   console.log(req.body);
 
-  // step 1 : Build Axios 'GET' to 'realty-mole' based on data passed in as part of request
+  //===================step 1 : Build Axios 'GET' to 'realty-mole' based on data passed in as part of request
   //post request body obj -
   // address: '5500 Grand Lake Drive, San Antonio, TX',
   // bedrooms: '4',
@@ -74,5 +74,10 @@ router.post("/rentSearch", function (req, res) {
 
   // step 3 : write what we will re-direct the user to with the correct data
 });
+
+
+
+
+
 
 module.exports = router;
