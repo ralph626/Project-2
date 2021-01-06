@@ -1,6 +1,6 @@
-const router = require("express").router();
+const router = require("express").Router();
 const { Router } = require("express");
-const { User,  } = require("../../models");
+const { User, Property, Weather } = require("../../models");
 
 //===========GET ALL USERS================
 router.get('/', (req, res) => {

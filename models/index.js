@@ -1,5 +1,5 @@
-const User = require("./user");
-const Property = require("./property");
+const User = require("./User");
+const Property = require("./Property");
 const Weather = require("./weather");
 
 Property.belongsTo(User,{
