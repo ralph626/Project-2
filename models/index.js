@@ -1,16 +1,23 @@
 const User = require("./User");
 const Property = require("./Property");
+const Weather = require("./weather");
 
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+Property.belongsTo(User,{
+  foreignKey: 'user_id'
+});
 
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+User.hasMany(Property, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Weather.belongsTo(Property, {
+  foreignKey:"property_id",
+  onDelete:"CASCADE"
+});
 
 module.exports = {
   User,
   Property,
+  Weather,
 };
