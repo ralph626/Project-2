@@ -1,5 +1,5 @@
 $(document).ready(function () {
-$("#firstSearch").on("click", function(event) {
+$("#homeSearch").on("click", function(event) {
     event.preventDefault();
     console.log("CALLING API");
     // EXAMPLE SEARCH CRITERIA
@@ -13,7 +13,12 @@ $("#firstSearch").on("click", function(event) {
     //}
     let searchCriteria = {
         address: $("#address").val(),
-        beds: $("#beds").val(),
+        bedrooms: $("#beds").val(),
+        bathrooms: $("#baths").val(),
+        propertyType:$("#propType").val(),
+        squareFootage:$("#sqft").val(),
+        compCount:$("#comps").val()
+
     };
     const options = {
         method: 'GET',
