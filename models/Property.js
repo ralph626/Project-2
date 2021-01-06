@@ -30,13 +30,20 @@ Property.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "project",
+    modelName: "property",
   }
 );
 
