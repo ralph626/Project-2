@@ -17,9 +17,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    userName:{
+    username:{
       type: DataTypes.STRING,
       allowNull:false,
+      unique:true,
     },
     email: {
       type: DataTypes.STRING,
@@ -55,7 +56,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "user",
   }
 );
 
