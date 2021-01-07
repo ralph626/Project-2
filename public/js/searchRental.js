@@ -33,31 +33,40 @@ $(document).ready(function () {
         //   function to fill out listing data===================
         listingData(response);
     });
-
-    //axios call======================================
-    // const options = {
-    //   method: "GET",
-    //   url: "https://realty-mole-property-api.p.rapidapi.com/rentalPrice",
-    //   params: searchCriteria,
-    //   headers: {
-    //     "x-rapidapi-key": "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2",
-    //     "x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com",
-    //   },
-    // };
-
-    // axios
-    //   .request(options)
-    //   .then(function (response) {
-    //     console.log(response.data);
-    //     //   function to fill out listing data===================
-    //     listingData(result);
-    //     // axios failed option================
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
   });
 });
+//post the rental search data and store the search history============================
+
+async function rentalSearch(event){
+    event.preventDefault();
+//variables to hold the rental form data===============
+const address = document.querySelector("#address");
+const bedrooms = document.querySelector("#beds");
+const bathrooms = document.querySelector("#baths");
+const property_type = document.querySelector("#propType");
+const square_footage = document.querySelector("#sqft");
+
+if(address && bedrooms && bathrooms && property_type && square_footage){
+    const response = await fetch('/api/properties/searchRentals', {
+        credentials: 'include',
+        method:'POST',
+        body: JSON.stringify({
+            address,
+            bedrooms,
+            bathrooms,
+            property_type,
+            square_footage,
+        }),
+    headers: {'Content-Type': 'application/json'}
+});
+
+if (response.ok){
+    console.log("Search Data has been posted!");
+} else {
+    alert(response.statusText);
+}
+
+
 //calling function for listing data=================
 function listingData(result){
   console.log(result);
