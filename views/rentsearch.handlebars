@@ -14,7 +14,7 @@
 <h2>Apartment And Houses for Rent!</h2>
 <section id="rental-display">
     {{!-- div for first property --}}
-    <div class="rental-one">
+    <div class="rental">
         <h1 id="listRent">Rent Range</h1>
         <p id="rentRangeHigh"></p>
         <p id="rentRangeLow"></p>
@@ -31,11 +31,14 @@
 
 {{!-- SECTION TO DISPLAY THE RENTAL SEARCH PRODUCTS --}}
 {{!-- <ol class="rental-list">
-    {{#each posts as |post|}}
+    {{#each homes as |home|}}
     <li class="box">
-      {{> post-info post }}
+      {{> home-info home }}
     </li>
     {{/each}}
   </ol> --}}
+
+
+
 <script src="/js/searchRental.js"></script>
 {{!-- <script src="/js/weatherForecast.js"></script> --}}

@@ -7,17 +7,6 @@ const apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
 $(document).ready(function () {
   $("#homeSearch").on("click", function (event) {
     event.preventDefault();
-    //     event.preventDefault();
-    //     console.log("CALLING API");
-    // EXAMPLE SEARCH CRITERIA
-    // params: {
-    // compCount: '5',
-    // squareFootage: '1600',
-    // bathrooms: '2',
-    // address: '5500 Grand Lake Drive, San Antonio, TX',
-    // bedrooms: '4',
-    // propertyType: 'Single Family'
-    //}
     // let searchCriteria = {
       let address = $("#address").val();
       let bedrooms = $("#beds").val();
@@ -26,17 +15,6 @@ $(document).ready(function () {
       let squareFootage = $("#sqft").val();
       let compCount = $("#comps").val();
     // };
-    //ajax call======================================
-
-    // $.ajax({
-    //   type: "GET",
-    //   url: rentalURL +  + ""&"appid=" + apiKey,
-    //   success: function (result) {
-    //     console.log("Request Successfull", result);
-    //     //   function to fill out listing data===================
-    //     listingData(result);
-    //   },
-    // });
 
     //jQuery call=====================================
     const settings = {
@@ -94,13 +72,13 @@ function listingData(result){
   let propType = result.listings[0].propertyType;
   let sqrfootage = result.listings[0].squareFootage;
   //targets in the div to be filled with the data
-  $("#listRent").html("$" + listRent);
-  $("#rentRangeLow").html("$" + rentRangeLow);
-  $("#rentRangeHigh").html("$" + rentRangeHigh);
-  $("#address").html(address);
-  $("#price").html("$" + price);
-  $("#nmbr-beds").html(bedrooms);
-  $("#nmbr-baths").html(bathrooms);
-  $("#prop-type").html(propType);
-  $("#sqft-property").html(sqrfootage + "ft");
+  $("#listRent").html("Listing estimate is :$" + listRent);
+  $("#rentRangeLow").html("The Lowest comparable unit is listed at:$" + rentRangeLow);
+  $("#rentRangeHigh").html("The Highest comprable unit is listed at:$" + rentRangeHigh);
+  $("#address").html("Address is:"+address);
+  $("#price").html("Rent is:$" + price);
+  $("#nmbr-beds").html("Bedrooms:"+bedrooms);
+  $("#nmbr-baths").html("Bathrooms:"+bathrooms);
+  $("#prop-type").html("Property Type is:"+propType);
+  $("#sqft-property").html("Square footage:"+sqrfootage + "ft");
 };
