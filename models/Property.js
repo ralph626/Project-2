@@ -8,8 +8,8 @@ Property.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      autoIncrement:true,
       primaryKey: true,
-      autoIncrement: true,
     },
     address: {
       type: DataTypes.STRING,
