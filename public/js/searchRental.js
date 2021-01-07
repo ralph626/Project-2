@@ -35,9 +35,26 @@ $("#homeSearch").on("click", function(event) {
       
       axios.request(options).then(function (response) {
           console.log(response.data);
+        //   function to fill out listing data===================
+          listingData(result);
+          // axios failed option================
       }).catch(function (error) {
           console.error(error);
       });
     });
+
+//calling function for listing data=================
+listingData = (response) => {
+    let listRent = response.rent;
+    let rentRangeHigh = response.rentRangeHigh;
+    let rentRangeLow = response.rentRangeLow;
+    let address = response.listings[0].formattedAddress;
+    let price = response.listings[0].price;
+    let bedrooms = response.listings[0].bedrooms;
+    let bathrooms =response.listings[0].bathrooms;
+    let propType =response.listings[0].propertyType;
+    let sqrfootage = response.listings[0].squareFootage;
+};
+
 });
     
