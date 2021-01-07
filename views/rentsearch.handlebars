@@ -12,6 +12,13 @@
 
 <hr>
 <h2>Apartment And Houses for Rent!</h2>
-
+{{!-- SECTION TO DISPLAY THE RENTAL SEARCH PRODUCTS --}}
+<ol class="rental-list">
+    {{#each posts as |post|}}
+    <li class="box">
+      {{> post-info post }}
+    </li>
+    {{/each}}
+  </ol>
 <script src="/js/searchRental.js"></script>
 <script src="/js/weatherForecast.js"></script>
