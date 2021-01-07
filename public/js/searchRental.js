@@ -1,7 +1,8 @@
-const axios = require("axios");
+// const axios = require("axios");
 
 $(document).ready(function () {
 $("#homeSearch").on("click", function(event) {
+    console.log("https://realty-mole-property-api.p.rapidapi.com/rentalPrice" + searchCriteria);
 //     event.preventDefault();
 //     console.log("CALLING API");
     // EXAMPLE SEARCH CRITERIA

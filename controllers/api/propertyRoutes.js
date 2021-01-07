@@ -74,7 +74,7 @@ router.get('/:id', (req, res) => {
 });
 
 // creates a Property; api/Propertys
-router.Property('/', withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', Property_url: 'https://taskmaster.com/press', user_id: 1}
   Property.create({
     address: req.body.address,
