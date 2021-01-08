@@ -62,15 +62,14 @@ router.get("/:id", (req, res) => {
 });
 
 // creates a Property;
-router.post("/rentsearch", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', Property_url: 'https://taskmaster.com/press', user_id: 1}
+router.post("/rentsearch", (req, res) => {
   Property.create({
     address: req.body.address,
     bedrooms: req.body.bedrooms,
     bathrooms: req.body.bathrooms,
-    property_type: req.session.property_type,
+    property_type: req.body.property_type,
     square_footage: req.body.square_footage,
-
+    user_id:req.session.user_id
   }).then((dbPropertyData) => {
     req.session.save(() => {
       req.session.address = dbPropertyData.address;
@@ -82,7 +81,8 @@ router.post("/rentsearch", withAuth, (req, res) => {
 
       res.json(dbPropertyData);
     });
-  });
+  }).catch(err => console.log(err));
+  ;
 });
 
 // deletes a Property;

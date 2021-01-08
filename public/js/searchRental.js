@@ -57,16 +57,23 @@ $(document).ready(function () {
 //post the rental search data and store the search history============================
 
 async function saveSearchHistory(data) {
-    const response = await fetch("/api/projects/rentsearch", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
+    console.log("POSTING!");
+    console.log(data)
+    try {
+
+        const response = await fetch("/api/projects/rentsearch", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" },
+        });
         console.log(response);
-    if (response.ok) {
-      console.log("Search Data has been posted!");
-    } else {
-      alert(response.statusText);
+        if (response.ok) {
+            console.log("Search Data has been posted!");
+        } else {
+            alert(response.statusText);
+        }
+    }catch(err){
+        console.log(err);
     }
   }
 
@@ -77,25 +84,25 @@ function listingData(result) {
   let listRent = result.rent;
   let rentRangeLow = result.rentRangeLow;
   let rentRangeHigh = result.rentRangeHigh;
-  //for loop variables==========================================
+$("#listRent").html("Listing estimate is: $" + listRent);
+$("#rentRangeLow").html("The Lowest comparable unit is listed at: $" + rentRangeLow);
+$("#rentRangeHigh").html("The Highest comprable unit is listed at: $" + rentRangeHigh);
+  //array position 0 variables==========================================
   let address = result.listings[0].formattedAddress;
   let price = result.listings[0].price;
   let bedrooms = result.listings[0].bedrooms;
   let bathrooms = result.listings[0].bathrooms;
   let propType = result.listings[0].propertyType;
   let sqrfootage = result.listings[0].squareFootage;
-  //targets in the div to be filled with the data
+  //array position 0 targets in the div to be filled with the data
 // =======
-$("#listRent").html("Listing estimate is: $" + listRent);
-$("#rentRangeLow").html("The Lowest comparable unit is listed at: $" + rentRangeLow);
-$("#rentRangeHigh").html("The Highest comprable unit is listed at: $" + rentRangeHigh);
+
 $("#address").html("Address is: "+address);
 $("#price").html("Rent is: $" + price);
 $("#nmbr-beds").html("Bedrooms: "+bedrooms);
 $("#nmbr-baths").html("Bathrooms: "+bathrooms);
 $("#prop-type").html("Property Type is: "+propType);
 $("#sqft-property").html("Square footage: "+sqrfootage + "ft");
-  
 
 
 
