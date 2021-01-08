@@ -72,13 +72,13 @@ function listingData(result){
   let propType = result.listings[0].propertyType;
   let sqrfootage = result.listings[0].squareFootage;
   //targets in the div to be filled with the data
-  $("#listRent").html("Listing estimate is :$" + listRent);
-  $("#rentRangeLow").html("The Lowest comparable unit is listed at:$" + rentRangeLow);
-  $("#rentRangeHigh").html("The Highest comprable unit is listed at:$" + rentRangeHigh);
-  $("#address").html("Address is:"+address);
-  $("#price").html("Rent is:$" + price);
-  $("#nmbr-beds").html("Bedrooms:"+bedrooms);
-  $("#nmbr-baths").html("Bathrooms:"+bathrooms);
-  $("#prop-type").html("Property Type is:"+propType);
-  $("#sqft-property").html("Square footage:"+sqrfootage + "ft");
+  $("#listRent").html("Listing estimate is: $" + listRent);
+  $("#rentRangeLow").html("The Lowest comparable unit is listed at: $" + rentRangeLow);
+  $("#rentRangeHigh").html("The Highest comprable unit is listed at: $" + rentRangeHigh);
+  $("#address").html("Address is: "+address);
+  $("#price").html("Rent is: $" + price);
+  $("#nmbr-beds").html("Bedrooms: "+bedrooms);
+  $("#nmbr-baths").html("Bathrooms: "+bathrooms);
+  $("#prop-type").html("Property Type is: "+propType);
+  $("#sqft-property").html("Square footage: "+sqrfootage + "ft");
 };
