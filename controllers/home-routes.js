@@ -22,8 +22,12 @@ router.get('/rentSearch', function(req,res){
 
 //================GET REQUEST TO USE THE API==============//
 
-router.get("/", function (req, res) {
+router.get("/landing", function (req, res) {
   res.render("landing");
+});
+
+router.get("/ContactUs", function (req, res) {
+  res.render("ContactUs");
 });
 
 router.get("/rentSearch", function (req, res) {
