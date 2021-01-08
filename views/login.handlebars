@@ -1,27 +1,25 @@
-<div class="inputContainer">
+<form class="login-form">
   <div>
-    <h1>GoHome Login:</h1>
+    <h3>Login Form </h3>
+    </div>
+    <div class="login">
+    <div>
+    <label for="email-login">email:</label>
+    <input type="text" id="email-login" />
+    </div>
+  <div>
+    <label for="password-login">password:</label>
+    <input type="password" id="password-login" />
   </div>
-  <form data-abide novalidate>
-    <label>Email*
-      <input type="text" required pattern="email" />
-      <span class="form-error" data-form-error-on="required">
-        Your email is required.
-      </span>
-      <span class="form-error" data-form-error-on="pattern">
-        Invalid Email
-      </span>
-    </label>
-    <label>Password*
-      <input type="password" required pattern="email" />
-      <span class="form-error" data-form-error-on="required">
-        Your password is required.
-      </span>
-      <span class="form-error" data-form-error-on="pattern">
-        Invalid Password
-      </span>
-    </label>
-    <button class="button" type="submit" value="Submit">Submit</button>
-  </form>
-  <a href="./ForgetPW.html">Forget Password?</a>
-</div>
+  <div class="button">
+    <button type="submit">login</button>
+  </div>
+  </div>
+</form>
+
+
+
+    <a href="/signup">signup instead</a>
+
+
+<script src="/js/login.js"></script>
