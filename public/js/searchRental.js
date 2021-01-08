@@ -188,85 +188,85 @@ $("#sqft-property").html("Square footage: "+sqrfootage + "ft");
   $("#sqft-property4").html("Square footage: "+sqrfootage4 + "ft");
 //>>>>>>> 5beda42f42e0e516c7d6d0c883f7002aac9017d0
 
-  //Set 5==========================================
-  let address5 = result.listings[5].formattedAddress;
-  let price5 = result.listings[5].price;
-  let bedrooms5 = result.listings[5].bedrooms;
-  let bathrooms5 = result.listings[5].bathrooms;
-  let propType5 = result.listings[5].propertyType;
-  let sqrfootage5 = result.listings[5].squareFootage;
-  //targets for set 5
-// =======
-  $("#address5").html("Address is: "+address5);
-  $("#price5").html("Rent is: $" + price5);
-  $("#nmbr-beds5").html("Bedrooms: "+bedrooms5);
-  $("#nmbr-baths5").html("Bathrooms: "+bathrooms5);
-  $("#prop-type5").html("Property Type is: "+propType5);
-  $("#sqft-property5").html("Square footage: "+sqrfootage5 + "ft");
+//   //Set 5==========================================
+//   let address5 = result.listings[5].formattedAddress;
+//   let price5 = result.listings[5].price;
+//   let bedrooms5 = result.listings[5].bedrooms;
+//   let bathrooms5 = result.listings[5].bathrooms;
+//   let propType5 = result.listings[5].propertyType;
+//   let sqrfootage5 = result.listings[5].squareFootage;
+//   //targets for set 5
+// // =======
+//   $("#address5").html("Address is: "+address5);
+//   $("#price5").html("Rent is: $" + price5);
+//   $("#nmbr-beds5").html("Bedrooms: "+bedrooms5);
+//   $("#nmbr-baths5").html("Bathrooms: "+bathrooms5);
+//   $("#prop-type5").html("Property Type is: "+propType5);
+//   $("#sqft-property5").html("Square footage: "+sqrfootage5 + "ft");
 
-  //Set 6==========================================
-  let address6 = result.listings[6].formattedAddress;
-  let price6 = result.listings[6].price;
-  let bedrooms6 = result.listings[6].bedrooms;
-  let bathrooms6 = result.listings[6].bathrooms;
-  let propType6 = result.listings[6].propertyType;
-  let sqrfootage6 = result.listings[6].squareFootage;
-  //targets for set 6
-// =======
-  $("#address6").html("Address is: "+address6);
-  $("#price6").html("Rent is: $" + price6);
-  $("#nmbr-beds6").html("Bedrooms: "+bedrooms6);
-  $("#nmbr-baths6").html("Bathrooms: "+bathrooms6);
-  $("#prop-type6").html("Property Type is: "+propType6);
-  $("#sqft-property6").html("Square footage: "+sqrfootage6 + "ft");
+//   //Set 6==========================================
+//   let address6 = result.listings[6].formattedAddress;
+//   let price6 = result.listings[6].price;
+//   let bedrooms6 = result.listings[6].bedrooms;
+//   let bathrooms6 = result.listings[6].bathrooms;
+//   let propType6 = result.listings[6].propertyType;
+//   let sqrfootage6 = result.listings[6].squareFootage;
+//   //targets for set 6
+// // =======
+//   $("#address6").html("Address is: "+address6);
+//   $("#price6").html("Rent is: $" + price6);
+//   $("#nmbr-beds6").html("Bedrooms: "+bedrooms6);
+//   $("#nmbr-baths6").html("Bathrooms: "+bathrooms6);
+//   $("#prop-type6").html("Property Type is: "+propType6);
+//   $("#sqft-property6").html("Square footage: "+sqrfootage6 + "ft");
 
-  //Set 7==========================================
-  let address7 = result.listings[7].formattedAddress;
-  let price7 = result.listings[7].price;
-  let bedrooms7 = result.listings[7].bedrooms;
-  let bathrooms7 = result.listings[7].bathrooms;
-  let propType7 = result.listings[7].propertyType;
-  let sqrfootage7 = result.listings[7].squareFootage;
-  //targets for set 7
-// =======
-  $("#address7").html("Address is: "+address7);
-  $("#price7").html("Rent is: $" + price7);
-  $("#nmbr-beds7").html("Bedrooms: "+bedrooms7);
-  $("#nmbr-baths7").html("Bathrooms: "+bathrooms7);
-  $("#prop-type7").html("Property Type is: "+propType7);
-  $("#sqft-property7").html("Square footage: "+sqrfootage7 + "ft");
+//   //Set 7==========================================
+//   let address7 = result.listings[7].formattedAddress;
+//   let price7 = result.listings[7].price;
+//   let bedrooms7 = result.listings[7].bedrooms;
+//   let bathrooms7 = result.listings[7].bathrooms;
+//   let propType7 = result.listings[7].propertyType;
+//   let sqrfootage7 = result.listings[7].squareFootage;
+//   //targets for set 7
+// // =======
+//   $("#address7").html("Address is: "+address7);
+//   $("#price7").html("Rent is: $" + price7);
+//   $("#nmbr-beds7").html("Bedrooms: "+bedrooms7);
+//   $("#nmbr-baths7").html("Bathrooms: "+bathrooms7);
+//   $("#prop-type7").html("Property Type is: "+propType7);
+//   $("#sqft-property7").html("Square footage: "+sqrfootage7 + "ft");
 
-  //Set 8==========================================
-  let address8 = result.listings[8].formattedAddress;
-  let price8 = result.listings[8].price;
-  let bedrooms8 = result.listings[8].bedrooms;
-  let bathrooms8 = result.listings[8].bathrooms;
-  let propType8 = result.listings[8].propertyType;
-  let sqrfootage8 = result.listings[8].squareFootage;
-  //targets for set 8
-// =======
-  $("#address8").html("Address is: "+address8);
-  $("#price8").html("Rent is: $" + price8);
-  $("#nmbr-beds8").html("Bedrooms: "+bedrooms8);
-  $("#nmbr-baths8").html("Bathrooms: "+bathrooms8);
-  $("#prop-type8").html("Property Type is: "+propType8);
-  $("#sqft-property8").html("Square footage: "+sqrfootage8 + "ft");
+//   //Set 8==========================================
+//   let address8 = result.listings[8].formattedAddress;
+//   let price8 = result.listings[8].price;
+//   let bedrooms8 = result.listings[8].bedrooms;
+//   let bathrooms8 = result.listings[8].bathrooms;
+//   let propType8 = result.listings[8].propertyType;
+//   let sqrfootage8 = result.listings[8].squareFootage;
+//   //targets for set 8
+// // =======
+//   $("#address8").html("Address is: "+address8);
+//   $("#price8").html("Rent is: $" + price8);
+//   $("#nmbr-beds8").html("Bedrooms: "+bedrooms8);
+//   $("#nmbr-baths8").html("Bathrooms: "+bathrooms8);
+//   $("#prop-type8").html("Property Type is: "+propType8);
+//   $("#sqft-property8").html("Square footage: "+sqrfootage8 + "ft");
 
-  //Set 9==========================================
-  let address9 = result.listings[9].formattedAddress;
-  let price9 = result.listings[9].price;
-  let bedrooms9 = result.listings[9].bedrooms;
-  let bathrooms9 = result.listings[9].bathrooms;
-  let propType9 = result.listings[9].propertyType;
-  let sqrfootage9 = result.listings[9].squareFootage;
-  //targets for set 9
-// =======
-  $("#address9").html("Address is: "+address9);
-  $("#price9").html("Rent is: $" + price9);
-  $("#nmbr-beds9").html("Bedrooms: "+bedrooms9);
-  $("#nmbr-baths9").html("Bathrooms: "+bathrooms9);
-  $("#prop-type9").html("Property Type is: "+propType9);
-  $("#sqft-property9").html("Square footage: "+sqrfootage9 + "ft");
+//   //Set 9==========================================
+//   let address9 = result.listings[9].formattedAddress;
+//   let price9 = result.listings[9].price;
+//   let bedrooms9 = result.listings[9].bedrooms;
+//   let bathrooms9 = result.listings[9].bathrooms;
+//   let propType9 = result.listings[9].propertyType;
+//   let sqrfootage9 = result.listings[9].squareFootage;
+//   //targets for set 9
+// // =======
+//   $("#address9").html("Address is: "+address9);
+//   $("#price9").html("Rent is: $" + price9);
+//   $("#nmbr-beds9").html("Bedrooms: "+bedrooms9);
+//   $("#nmbr-baths9").html("Bathrooms: "+bathrooms9);
+//   $("#prop-type9").html("Property Type is: "+propType9);
+//   $("#sqft-property9").html("Square footage: "+sqrfootage9 + "ft");
 
 
 }
