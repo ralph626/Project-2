@@ -1,17 +1,50 @@
 <h1>Search Here for your new Home!</h1>
 <form>
-    <input id="cityName" type="text" placeholder="ENTER CITY NAME">
+    {{!-- <input id="cityName" type="text" placeholder="ENTER CITY NAME"> --}}
+    <label for="address">Address: </label>
     <input id="address" type="text" placeholder="ENTER ADDRESS">
-    <input id="beds" type="number" placeholder="NUMBER OF BEDROOMS" min="1" max="10">
-    <input id="baths" type="number" placeholder="NUMBER OF BATHROOMS" min="1" max="10">
+    <label for="beds">Beds: </label>
+    <input id="beds" type="number" placeholder="BED" min="1" max="10">
+    <label for="baths">Baths: </label>
+    <input id="baths" type="number" placeholder="BATH" min="1" max="10">
+    <label for="propType">Property Type: </label>
     <input id="propType" type="text" placeholder="PROPERTY TYPE">
+    <label for="sqft">Square Footage: </label>
     <input id="sqft" type="number" placeholder="SQUARE FOOTAGE">
-    <input id="comps" type="number" placeholder="NUMBER OF COMPARABLE PROPERTIES" min="1">
+    <label for="comps">How many comparisons? </label>
+    <input id="comps" type="number" placeholder="Min = 3, Max = 10" min="1">
     <button id="homeSearch">Search:</button>
 </form>
 
 <hr>
 <h2>Apartment And Houses for Rent!</h2>
+<section id="rental-display">
+    {{!-- div for first property --}}
+    <div class="rental">
+        <h1 id="listRent">Rent Range</h1>
+        <p id="rentRangeHigh"></p>
+        <p id="rentRangeLow"></p>
+        <hr>
+        <p id="address"></p>
+        <p id="price"></p>
+        <p id="nmbr-beds"></p>
+        <p id="nmbr-baths"></p>
+        <p id="prop-type"></p>
+        <p id="sqft-property"></p>
+
+    </div>
+</section>
+
+{{!-- SECTION TO DISPLAY THE RENTAL SEARCH PRODUCTS --}}
+{{!-- <ol class="rental-list">
+    {{#each homes as |home|}}
+    <li class="box">
+      {{> home-info home }}
+    </li>
+    {{/each}}
+  </ol> --}}
+
+
 
 <script src="/js/searchRental.js"></script>
-<script src="/js/weatherForecast.js"></script>
+{{!-- <script src="/js/weatherForecast.js"></script> --}}
