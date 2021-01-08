@@ -17,8 +17,7 @@ router.get('/rentSearch', function(req,res){
 // })
 
 //=======
-const rentURL =
-  "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice";
+
 //>>>>>>> origin
 
 //================GET REQUEST TO USE THE API==============//
