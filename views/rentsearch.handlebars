@@ -1,7 +1,7 @@
 <h1>Search Here for your new Home!</h1>
 <form class='rental-form'>
     {{!-- <input id="cityName" type="text" placeholder="ENTER CITY NAME"> --}}
-    <label for="address">Address: </label>
+    <label for="address">Address: [Format = Address including Street #, City, State]</label>
     <input id="address" type="text" placeholder="ENTER ADDRESS">
     <label for="beds">Beds: </label>
     <input id="beds" type="number" placeholder="BED" min="1" max="10">
@@ -11,11 +11,18 @@
     <input id="propType" type="text" placeholder="PROPERTY TYPE">
     <label for="sqft">Square Footage: </label>
     <input id="sqft" type="number" placeholder="SQUARE FOOTAGE">
-
-
     <label for="comps">How many comparisons? </label>
-    <input id="comps" type="number" placeholder="Min = 3, Max = 10" min="1">
-    <button id="homeSearch">Search:</button>
+    <select id="comps" name="compare">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button type="button" id="homeSearch">Search</button>
 
 </form>
 
