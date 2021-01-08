@@ -68,9 +68,9 @@ router.post("/rentsearch", withAuth, (req, res) => {
     address: req.body.address,
     bedrooms: req.body.bedrooms,
     bathrooms: req.body.bathrooms,
-    property_type: req.session.propertyType,
-    square_footage: req.body.squareFootage,
-    
+    property_type: req.session.property_type,
+    square_footage: req.body.square_footage,
+
   }).then((dbPropertyData) => {
     req.session.save(() => {
       req.session.address = dbPropertyData.address;
