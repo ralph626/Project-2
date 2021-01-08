@@ -3,17 +3,18 @@
 
 const key = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
 const url = "mailcheck.p.rapidapi.com";
-
+let email = document.querySelector('#email-signup').value.trim();
 
 async function newUser(event) {
   event.preventDefault();
 
   // Get the username, email and password
   const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
+  let email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
   if (username && email && password) {
+    console.log(username && email && password);
     const response = await fetch('/api/users/signup', {
       credentials: 'include',  //was /api/users
       method: 'POST',
@@ -24,8 +25,9 @@ async function newUser(event) {
         
       }),
       headers: { 'Content-Type': 'application/json' }
+      
     });
-
+    console.log(response.statusText);
     if (response.ok) {
       document.location.replace('/rentsearch');  //was /dashboard/
     } else {
@@ -37,18 +39,18 @@ async function newUser(event) {
 document.querySelector('.signup-form').addEventListener('submit', newUser);
 // console.log(response);
 //=========API CALL TO VERIFY THAT EMAIL IS A GOOD DOMAIN AND NOT SPAM==========//
-// fetch("https://mailcheck.p.rapidapi.com/?domain=" + `${email}`, {
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-key": key,
-//     "x-rapidapi-host": url,
-//   },
-// })
-//   .then((response) => {
-//     // console.log(response);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+fetch("https://mailcheck.p.rapidapi.com/?domain=" + `${email}`, {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": key,
+    "x-rapidapi-host": url,
+  },
+})
+  .then((response) => {
+     console.log(response.statusText);
+  })
+  .catch((err) => {
+    alert(err);
+  });
 
 
