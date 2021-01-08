@@ -13,8 +13,12 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-//================='POST' ROUTE TO SIGNUP==========//
-router.post("/", async (req,res) =>{
+
+//FIND ONE USER====================================
+
+
+//'POST' ROUTE TO SIGNUP================================
+router.post("/signup", (req,res) =>{
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -34,8 +38,6 @@ router.post("/", async (req,res) =>{
       res.status(500).json(err);
     });
 });
-
-
 
 //========='POST' ROUTE TO VERIFY CURRENT USER==============//
 router.post("/login", async (req, res) => {
