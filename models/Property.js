@@ -22,11 +22,11 @@ Property.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    propertyType: {
+    property_type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    squareFootage: {
+    square_footage: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
