@@ -50,30 +50,16 @@ $(document).ready(function () {
       console.log("The AJAX was successfull", response);
       //   function to fill out listing data===================
       listingData(response);
+      saveSearchHistory({address, bedrooms, bathrooms, property_type:propertyType, square_footage: squareFootage});
     });
   });
 
 //post the rental search data and store the search history============================
 
-async function rentalSearch(event) {
-  event.preventDefault();
-  //variables to hold the rental form data===============
-  const address = document.querySelector("#address");
-  const bedrooms = document.querySelector("#beds");
-  const bathrooms = document.querySelector("#baths");
-  const property_type = document.querySelector("#propType");
-  const square_footage = document.querySelector("#sqft");
-
-  if (address && bedrooms && bathrooms && property_type && square_footage) {
-    const response = await fetch("/api/property", {
+async function saveSearchHistory(data) {
+    const response = await fetch("/api/projects/rentsearch", {
       method: "POST",
-      body: JSON.stringify({
-        address,
-        bedrooms,
-        bathrooms,
-        property_type,
-        square_footage,
-      }),
+      body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
         console.log(response);
@@ -83,9 +69,6 @@ async function rentalSearch(event) {
       alert(response.statusText);
     }
   }
-}
-
-document.querySelector('.rental-form').addEventListener('submit', rentalSearch);
 
 //calling function for listing data=================
 function listingData(result) {
