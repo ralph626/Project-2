@@ -1,0 +1,30 @@
+
+<body>
+    <div id="loginContainer">
+        <div>
+            <h1>GoHome Login:</h1>
+        </div>
+        <form data-abide novalidate>
+            <label>Email*
+            <input type="text" required pattern="email">
+            <span class="form-error" data-form-error-on="required">
+                Your email is required.
+            </span>
+            <span class="form-error" data-form-error-on="pattern">
+                Invalid Email
+            </span>
+            </label>
+            <label>Password*
+                <input type="text" required pattern="email">
+                <span class="form-error" data-form-error-on="required">
+                    Your password is required.
+                </span>
+                <span class="form-error" data-form-error-on="pattern">
+                    Invalid Password
+                </span>
+                </label>
+            <button class="button" type="submit" value="Submit">Submit</button>
+        </form>
+        <a href="./ForgetPW.html">Forget Password?</a>
+    </div>
+</body>
