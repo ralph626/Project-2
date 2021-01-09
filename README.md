@@ -28,6 +28,7 @@ Square footage: Size of the property
 3. On each search, also display the image of the properties that are being compared. 
 4. Remove the "Log-in" and "sign-up" buttons from the nav bar after a user registers or logs on. 
 5. Make the code to display the rental divs "DRY" and eliminate the repeating divs. 
+6. Additional CSS to make the presentation cleaner
 
 
 
