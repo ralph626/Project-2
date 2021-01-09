@@ -51,7 +51,7 @@ $(document).ready(function () {
       //   function to fill out listing data===================
       listingData(response);
       saveSearchHistory({address, bedrooms, bathrooms, property_type:propertyType, square_footage: squareFootage});
-      getSearchHistory({address, bedrooms, bathrooms, property_type:propertyType, square_footage: squareFootage});
+      // getSearchHistory({address, bedrooms, bathrooms, property_type:propertyType, square_footage: squareFootage});
     });
   });
 
@@ -79,25 +79,25 @@ async function saveSearchHistory(data) {
   }
 
   //get the search history data============================
-  async function getSearchHistory(historyData){
-    console.log("GETTING HISTORY");
+  // async function getSearchHistory(historyData){
+  //   console.log("GETTING HISTORY");
     
-    try{
-      const response = await fetch("/api/projects/rentsearch", {
-        method:"GET",
-        // body:JSON.stringify(historyData),
-        headers: {"Content-Type": "application/json"},
-      });
-      console.log("History response is:"+response);
-      if(response.ok){
-        console.log("History has been retireved!");
-      } else {
-        alert("History"+response.statusText);
-      }
-    }catch(err){
-      console.log(err);
-    }
-  }
+  //   try{
+  //     const response = await fetch("/api/projects/rentsearch", {
+  //       method:"GET",
+  //       // body:JSON.stringify(historyData),
+  //       headers: {"Content-Type": "application/json"},
+  //     });
+  //     console.log("History response is:"+response);
+  //     if(response.ok){
+  //       console.log("History has been retireved!");
+  //     } else {
+  //       alert("History"+response.statusText);
+  //     }
+  //   }catch(err){
+  //     console.log(err);
+  //   }
+  // }
 
 //calling function for listing data=================
 function listingData(result) {
