@@ -43,11 +43,11 @@ These searches are saved in the database, along with the user information.
 
 --- Sneak Peak at GoHome ---
 
-<img src="images/root.JPG" alt="This is a screenshot of the main page." width="100%" height="100%">
-<img src="images/loginPg.JPG" alt="This is a screenshot of the login page." width="100%" height="100%">
-<img src="images/signUp.JPG" alt="This is a screenshot of the sign up page." width="100%" height="100%">
-<img src="images/inquiry.JPG" alt="This is a screenshot of the inquiry page." width="100%" height="100%">
-<img src="images/contact.JPG" alt="This is a screenshot of the contact page." width="100%" height="100%">
+<img src="images/root.jpg" alt="This is a screenshot of the main page." width="100%" height="100%">
+<img src="images/loginPg.jpg" alt="This is a screenshot of the login page." width="100%" height="100%">
+<img src="images/signUp.jpg" alt="This is a screenshot of the sign up page." width="100%" height="100%">
+<img src="images/inquiry.jpg" alt="This is a screenshot of the inquiry page." width="100%" height="100%">
+<img src="images/contact.jpg" alt="This is a screenshot of the contact page." width="100%" height="100%">
 
 
 Thank you for viewing and we hope you enjoy the app!
