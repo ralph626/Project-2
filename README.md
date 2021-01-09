@@ -22,12 +22,12 @@ Square footage: Size of the property
 
 
 ## Functionality To Be Added In Future Patches
-1. Display the rental search history for the user either in the rent search body, or on the landing page after they log in.
-2. Display an error if an email like "ObviouslyFake@fake.com" is entered.
-3. Allow User to delete their search history as they move on to other properties to compare.
-4. On each search, also display the image of the properties that are being compared. 
-5. Remove the "Log-in" and "sign-up" buttons from the nav bar after a user registers or logs on. 
-6. Make the code to display the rental divs "DRY" and eliminate the repeating divs. 
+
+1. Display an error if an email like "ObviouslyFake@fake.com" is entered.
+2. Allow User to delete their search history as they move on to other properties to compare.
+3. On each search, also display the image of the properties that are being compared. 
+4. Remove the "Log-in" and "sign-up" buttons from the nav bar after a user registers or logs on. 
+5. Make the code to display the rental divs "DRY" and eliminate the repeating divs. 
 
 
 
