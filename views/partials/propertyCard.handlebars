@@ -1,23 +1,31 @@
-<article class="property">
-  <div class="title">
+{{!-- <article class="property">
+  <div class="history">
+{{!-- commented out {{ address}} line 4 after the <a></a> tags
+    <a href="/api/rentsearch/{{id}}"> </a>
 
-    <a href="/rentsearch/{{id}}"> {{formattedAddress}} </a>                     
+  </div>
 
- </div>
-  <div class="meta">
+  <div class="homes">
+    <h1 id="rentHist">Search History</h1>
+    <p>{{ address }}</p>
+    <p>{{ bedrooms }}</p>
+    <p>{{ bathrooms }}</p>
+    <p>{{ propertyType }}</p>
+    <p>{{ squareFootage }}</p>
+  </div>
 
-    </div>
-  {{!-- <div class="homes">
-    <h1 id="listRent">Rent Range</h1>
-    <p>{{home-rent}}</p>
-   <p>{{ home-rentRangeHigh}}<p>
-   <p>{{ home-rentRangeLow }}</p>
-   <p>{{ home.listings.formattedAddress }}</p>
-   <p>{{home.listings.price}}</p>
-   <p>{{home.listings.bedrooms}}</p>
-   <p>{{home.listings.bathrooms}}</p>
-   <p>{{home.listings.propertyType}}</p>
-   <p>{{home.listings.squareFootage}}</p>
-  </div> --}}
+</article> --}}
 
-</article>
+<section class="card">
+  <!--  -->
+  <a href="/rentsearch/{{id}}">
+    <!--  -->
+    <header>Search History</header>
+    <!-- list of table params for the searched address -->
+    <p>{{address}}</p>
+    <p>{{bedrooms}}</p>
+    <p>{{bathrooms}}</p>
+    <p>{{property_type}}</p>
+    <p>{{square_footage}}</p>
+  </a>
+</section>

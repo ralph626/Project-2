@@ -2,6 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 const withAuth = require("../utils/auth");
 const apiKey = "b7c412f502mshbbc78eb664a4ee7p1c8f5fjsn8b018315a9c2";
+const { Property, User, Weather } = require("../models");
 //<<<<<<< HEAD
 const rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice";
 
@@ -9,9 +10,9 @@ const rentURL = "https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPric
 router.get('/', function(req,res){
   res.render("homepage");
 });
-router.get('/rentSearch', function(req,res){
-  res.render("rentsearch");
-});
+// router.get('/rentSearch', function(req,res){
+//   res.render("rentsearch");
+// });
 
 //=======================================================
 // })
@@ -30,8 +31,24 @@ router.get("/ContactUs", function (req, res) {
   res.render("ContactUs");
 });
 
-router.get("/rentSearch", function (req, res) {
-  res.render("rentsearch");
+router.get("/rentSearch", async function (req, res) {
+  let dbPropertyData;
+  // let properties;
+  if(req.session.user_id){
+     dbPropertyData = await Property.findAll({
+      where:{
+        user_id:req.session.user_id
+      },
+      raw:true,
+    
+    });
+    console.log(dbPropertyData);
+    // properties = dbPropertyData.get({plain:true});
+  }
+  console.log(req.session.user_id);
+  // console.log(properties);
+  res.render("rentsearch", {dbPropertyData});
+  
 });
 
 router.get("/login", (req, res) => {

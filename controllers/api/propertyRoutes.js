@@ -27,62 +27,93 @@ router.get("/", (req, res) => {
     });
 });
 
-// get one Property; api/Propertys/id
-router.get("/:id", (req, res) => {
-  Property.findOne({
-    where: {
-      id: req.params.id,
-    },
-    attributes: [
-      "id",
-      "address",
-      "bedrooms",
-      "property_type",
-      "square_footage",
-      "user_id",
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
-  })
-    .then((dbPropertyData) => {
-      if (!dbPropertyData) {
-        res.status(404).json({ message: "No Property found with this id" });
-        return;
+// get a Property by ID api/Propertys/id
+router.get("/rentsearch/:id", async (req, res) => {
+  try {
+    const dbPropertyData = await Property.findOne({
+      where:{
+        id:req.params.id
       }
-      res.json(dbPropertyData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+      });
+    console.log(dbPropertyData);
+    const property = dbPropertyData.get({ plain: true });
+    console.log(property);
+    res.json(property, { property });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
+////////////////////////////////
+//   {include: [
+    //     {
+    //       model: Property,
+    //       attributes: [
+    //         "id",
+    //         "address",
+    //         "bedrooms",
+    //         "property_type",
+    //         "square_footage",
+    //         "user_id",
+    //       ],
+    //     },
+    //   ],
+    // });
+  // Property.findOne({
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  //   attributes: [
+  //     "id",
+  //     "address",
+  //     "bedrooms",
+  //     "property_type",
+  //     "square_footage",
+  //     "user_id",
+  //   ],
+  //   include: [
+  //     {
+  //       model: User,
+  //       attributes: ["username"],
+  //     },
+  //   ],
+  // })
+  //   .then((dbPropertyData) => {
+  //     if (!dbPropertyData) {
+  //       res.status(404).json({ message: "No Property found with this id" });
+  //       return;
+  //     }
+  //     res.json(dbPropertyData);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
 
 // creates a Property;
-router.post("/rentsearch", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', Property_url: 'https://taskmaster.com/press', user_id: 1}
+router.post("/rentsearch", (req, res) => {
   Property.create({
     address: req.body.address,
     bedrooms: req.body.bedrooms,
     bathrooms: req.body.bathrooms,
-    property_type: req.session.property_type,
+    property_type: req.body.property_type,
     square_footage: req.body.square_footage,
+    user_id: req.session.user_id,
+  })
+    .then((dbPropertyData) => {
+      req.session.save(() => {
+        req.session.address = dbPropertyData.address;
+        req.session.bedrooms = dbPropertyData.bedrooms;
+        req.session.bathrooms = dbPropertyData.bathrooms;
+        req.session.property_type = dbPropertyData.property_type;
+        req.session.square_footage = dbPropertyData.square_footage;
+        req.session.user_id = dbPropertyData.user_id;
 
-  }).then((dbPropertyData) => {
-    req.session.save(() => {
-      req.session.address = dbPropertyData.address;
-      req.session.bedrooms = dbPropertyData.bedrooms;
-      req.session.bathrooms = dbPropertyData.bathrooms;
-      req.session.property_type = dbPropertyData.property_type;
-      req.session.square_footage = dbPropertyData.square_footage;
-      req.session.user_id = dbPropertyData.user_id;
-
-      res.json(dbPropertyData);
-    });
-  });
+        res.json(dbPropertyData);
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 // deletes a Property;
