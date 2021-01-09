@@ -30,60 +30,66 @@ router.get("/", (req, res) => {
 // get a Property by ID api/Propertys/id
 router.get("/rentsearch/:id", async (req, res) => {
   try {
-    const dbPropertyData = await Property.findByPk(req.params.id, {
-      include: [
-        {
-          model: Property,
-          attributes: [
-            "id",
-            "address",
-            "bedrooms",
-            "property_type",
-            "square_footage",
-            "user_id",
-          ],
-        },
-      ],
-    });
-
+    const dbPropertyData = await Property.findOne({
+      where:{
+        id:req.params.id
+      }
+      });
+    console.log(dbPropertyData);
     const property = dbPropertyData.get({ plain: true });
-    res.render("property", { property });
+    console.log(property);
+    res.json(property, { property });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-//   Property.findOne({
-//     where: {
-//       id: req.params.id,
-//     },
-//     attributes: [
-//       "id",
-//       "address",
-//       "bedrooms",
-//       "property_type",
-//       "square_footage",
-//       "user_id",
-//     ],
-//     include: [
-//       {
-//         model: User,
-//         attributes: ["username"],
-//       },
-//     ],
-//   })
-//     .then((dbPropertyData) => {
-//       if (!dbPropertyData) {
-//         res.status(404).json({ message: "No Property found with this id" });
-//         return;
-//       }
-//       res.json(dbPropertyData);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+////////////////////////////////
+//   {include: [
+    //     {
+    //       model: Property,
+    //       attributes: [
+    //         "id",
+    //         "address",
+    //         "bedrooms",
+    //         "property_type",
+    //         "square_footage",
+    //         "user_id",
+    //       ],
+    //     },
+    //   ],
+    // });
+  // Property.findOne({
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  //   attributes: [
+  //     "id",
+  //     "address",
+  //     "bedrooms",
+  //     "property_type",
+  //     "square_footage",
+  //     "user_id",
+  //   ],
+  //   include: [
+  //     {
+  //       model: User,
+  //       attributes: ["username"],
+  //     },
+  //   ],
+  // })
+  //   .then((dbPropertyData) => {
+  //     if (!dbPropertyData) {
+  //       res.status(404).json({ message: "No Property found with this id" });
+  //       return;
+  //     }
+  //     res.json(dbPropertyData);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
 
 // creates a Property;
 router.post("/rentsearch", (req, res) => {
