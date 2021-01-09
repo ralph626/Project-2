@@ -101,9 +101,22 @@
 </div>
 
 {{!-- Display rental search history --}}
-{{!-- {{#each properties as |property|}}
-{{> property-details}}
-{{/each}} --}}
+{{#if dbPropertyData}}
+<section class="rent-hist">
+    {{#each dbPropertyData }}
+    <p>{{address}}</p>
+    <p>{{property_type}}</p>
+  
+  <div class="rent-details">
+    <p>{{bedrooms}}</p>
+    <p>{{bathrooms}}</p>
+    <p>{{square_footage}}</p>
+    
+  </div>
+  {{/each}}
+</section>
+{{/if}}
+
 
 <script src="/js/searchRental.js"></script>
 {{!-- <script src="/js/weatherForecast.js"></script> --}}
